@@ -9,6 +9,8 @@ import { RegisterComponent } from './components/register/register.component';
 import { LoginComponent } from './components/login/login.component';
 import { HomeComponent } from './components/home/home.component';
 import { HttpClientModule } from "@angular/common/http";
+import { SendmailComponent } from './sendmail/sendmail.component';
+import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { HttpClientModule } from "@angular/common/http";
     NavbarComponent,
     RegisterComponent,
     LoginComponent,
-    HomeComponent
+    HomeComponent,
+    SendmailComponent,
+    ForgotpasswordComponent
   ],
   imports: [
     BrowserModule,

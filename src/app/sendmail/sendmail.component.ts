@@ -1,32 +1,30 @@
 import { Component, OnInit } from '@angular/core';
-import { Ilogin } from 'src/app/shared/model/register';
 import {Validators, FormGroup, FormBuilder } from "@angular/forms";
 import { RegisterServices } from 'src/app/shared/services/register';
 import { Router } from '@angular/router';
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  selector: 'app-sendmail',
+  templateUrl: './sendmail.component.html',
+  styleUrls: ['./sendmail.component.css']
 })
-export class LoginComponent implements OnInit {
-  public userLogin: FormGroup;
+export class SendmailComponent implements OnInit {
+  public sendMail: FormGroup;
   public submitted: boolean = false;
   public showErrorMessage: string;
   constructor(private fb: FormBuilder, private registerServices:RegisterServices,private router: Router) { }
 
   ngOnInit() {
-    this.userLogin = this.fb.group({
+    this.sendMail = this.fb.group({
       "UserLogin": this.fb.group({
-        "EmailId": ["", Validators.required],
-        "Password" : ["", Validators.required]
+        "EmailId": ["", Validators.required]
       })
     })
   };
 
-  Save(data: Ilogin) {
+  Save(data: any) {
     this.submitted = true;
-    if (!this.userLogin.valid) { return; }
-    this.registerServices.UserLogin(data)
+    if (!this.sendMail.valid) { return; }
+    this.registerServices.Sendmail(data)
       .subscribe(item => {
         alert("Login Done");
         console.log(item);

@@ -3,6 +3,8 @@ import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { HomeComponent } from './components/home/home.component';
+import { SendmailComponent } from './sendmail/sendmail.component';
+import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.component';
 
 
 const routes: Routes = [
@@ -21,6 +23,14 @@ const routes: Routes = [
   {
     path:"home",
     component: HomeComponent
+  },
+  {
+    path: "sendmail",
+    component: SendmailComponent
+  },
+  {
+    path: "forgotpassword/:id",
+    component: ForgotpasswordComponent
   }
 ];
 
